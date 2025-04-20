@@ -4,6 +4,21 @@ from streamlit_extras.stoggle import stoggle
 from processing import preprocess
 from processing.display import Main
 
+# Custom CSS for hover effect
+hover_css = """
+<style>
+div[data-testid*='stButton'] > button:hover {
+    background-color: #f63366; /* Primary color from theme */
+    color: white;
+    border-color: #f63366;
+}
+div[data-testid*='stButton'] > button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+</style>
+"""
+st.markdown(hover_css, unsafe_allow_html=True)
+
 # Setting the wide mode as default
 st.set_page_config(layout="wide")
 
