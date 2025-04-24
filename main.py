@@ -7,6 +7,43 @@ from processing.display import Main
 # Setting the wide mode as default
 st.set_page_config(layout="wide")
 
+# Live starfield animated background
+starfield_css = """
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.stApp {
+    background: transparent;
+}
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #1e1e2f 0%, #11121a 100%);
+    background-image:
+        radial-gradient(2px 2px at 20% 20%, #fff, transparent),
+        radial-gradient(2px 2px at 40% 60%, #fff, transparent),
+        radial-gradient(2px 2px at 65% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 80% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 100px 200px, #fff, transparent);
+    background-size: 200px 200px;
+    animation: starAnim 200s linear infinite;
+    z-index: -1;
+}
+@keyframes starAnim {
+    from {background-position: 0 0;}
+    to {background-position: -200px -200px;}
+}
+</style>
+<div id="starfield"></div>
+"""
+st.markdown(starfield_css, unsafe_allow_html=True)
+
 # Custom CSS for hover effect
 hover_css = """
 <style>
