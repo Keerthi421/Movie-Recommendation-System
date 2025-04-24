@@ -106,6 +106,38 @@ div[data-testid*='stButton'] > button {
     border-radius: 8px;
     margin: 0.5rem;
 }
+
+/* Card style for dashboards */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] .sidebar-content {
+    background: rgba(20, 20, 30, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/* Progress and Stats cards alignment */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Individual stats blocks */
+.stats-grid > div {
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
 </style>
 """
 st.markdown(ui_css, unsafe_allow_html=True)
