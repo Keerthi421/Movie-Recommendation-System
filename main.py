@@ -7,50 +7,61 @@ from processing.display import Main
 # Setting the wide mode as default
 st.set_page_config(layout="wide")
 
-# Modern dark gradient background and centered hero container
-bg_css = """
+# Glassmorphic scenic background and UI panels
+glass_css = """
 <style>
-body, .stApp {
-    background: linear-gradient(135deg, #0f0f25 0%, #1a1a3d 100%) !important;
-    color: #e0e0e0;
+body {
+  margin: 0;
+  padding: 0;
+  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat fixed;
 }
+.stApp {
+  background: transparent !important;
+}
+/* Glass main container */
 section.main > div[data-testid="main-container"] {
-    backdrop-filter: blur(10px);
-    background-color: rgba(20,20,40,0.6) !important;
+  background: rgba(255,255,255,0.1) !important;
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  padding: 2rem;
+  margin: 2rem auto;
 }
+/* Glass hero section */
 #hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 70vh;
-    text-align: center;
-    margin: 0;
+  background: rgba(255,255,255,0.15) !important;
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  padding: 3rem;
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
 }
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* Glass menu bar */
+div[data-testid="stHorizontalBlock"] {
+  background: rgba(255,255,255,0.1) !important;
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 }
-#hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
+/* Button style in hero */
 #hero div[data-testid*='stButton'] > button {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    background-color: #ff4c4c;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 #hero div[data-testid*='stButton'] > button:hover {
-    background-color: #e04343;
-    transform: translateY(-2px);
+  background-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
 }
 </style>
 """
-st.markdown(bg_css, unsafe_allow_html=True)
+st.markdown(glass_css, unsafe_allow_html=True)
 
 # Custom CSS for hover effect
 hover_css = """
