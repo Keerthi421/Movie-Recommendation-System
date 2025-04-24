@@ -59,6 +59,57 @@ div[data-testid*='stButton'] > button {
 """
 st.markdown(hover_css, unsafe_allow_html=True)
 
+# Improve UI: card backgrounds, spacing, and typography
+ui_css = """
+<style>
+/* Style the main app container as a semi-transparent card */
+section.main > div[data-testid="main-container"] {
+    background: rgba(30, 30, 40, 0.8);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Center and enlarge the page title */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Style the horizontal menu bar as a card */
+div[data-testid="stHorizontalBlock"] {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Increase selectbox and button sizes */
+div[data-baseweb="select"] {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 1rem;
+}
+div[data-testid*='stButton'] > button {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Style movie recommendation grid with spacing */
+.stImage {
+    padding: 1rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    margin: 0.5rem;
+}
+</style>
+"""
+st.markdown(ui_css, unsafe_allow_html=True)
+
 displayed = []
 
 if 'movie_number' not in st.session_state:

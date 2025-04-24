@@ -18,11 +18,6 @@ Our Movie Recommender System, built using Python and Natural Language Processing
 **Check All Movies Page:** Navigate between pages with ease using buttons or the slider.
 
 
-## Watch the Demo
-
-
-For a live demonstration of our Movie Recommender System, watch the following video:
-[![Watch the Demo](https://img.youtube.com/vi/0BJgu4qZqOM/0.jpg)](https://youtu.be/0BJgu4qZqOM)
 
 
 ## Try the App
