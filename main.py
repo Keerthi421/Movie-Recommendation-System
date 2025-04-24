@@ -123,6 +123,22 @@ if 'user_menu' not in st.session_state:
 
 
 def main():
+    # Home page hero section
+    if st.session_state['user_menu'] == "":
+        st.markdown(
+            """
+            <div style='text-align:center; margin-top:4rem;'>
+                <h1>Welcome to Movie Recommender 🎬</h1>
+                <p style='font-size:1.2rem;'>Get your personalized recommendations in one click.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        # 'Get Your Recommendation Now' button
+        if st.button('Get Your Recommendation Now'):
+            st.session_state['user_menu'] = 'Recommend me a similar movie'
+        return
+
     def initial_options():
         # To display menu
         st.session_state.user_menu = streamlit_option_menu.option_menu(
