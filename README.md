@@ -19,7 +19,6 @@ Our Movie Recommender System, built using Python and Natural Language Processing
 
 
 
-
 ## Try the App
 
 Explore the Movie Recommender System yourself! Our app is deployed on Streamlit. Click the link below to get started:

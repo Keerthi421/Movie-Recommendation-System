@@ -7,42 +7,50 @@ from processing.display import Main
 # Setting the wide mode as default
 st.set_page_config(layout="wide")
 
-# Live starfield animated background
-starfield_css = """
+# Modern dark gradient background and centered hero container
+bg_css = """
 <style>
-body {
+body, .stApp {
+    background: linear-gradient(135deg, #0f0f25 0%, #1a1a3d 100%) !important;
+    color: #e0e0e0;
+}
+section.main > div[data-testid="main-container"] {
+    backdrop-filter: blur(10px);
+    background-color: rgba(20,20,40,0.6) !important;
+}
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    text-align: center;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
 }
-.stApp {
-    background: transparent;
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
-#starfield {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #1e1e2f 0%, #11121a 100%);
-    background-image:
-        radial-gradient(2px 2px at 20% 20%, #fff, transparent),
-        radial-gradient(2px 2px at 40% 60%, #fff, transparent),
-        radial-gradient(2px 2px at 65% 40%, #fff, transparent),
-        radial-gradient(2px 2px at 80% 80%, #fff, transparent),
-        radial-gradient(1px 1px at 100px 200px, #fff, transparent);
-    background-size: 200px 200px;
-    animation: starAnim 200s linear infinite;
-    z-index: -1;
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
-@keyframes starAnim {
-    from {background-position: 0 0;}
-    to {background-position: -200px -200px;}
+#hero div[data-testid*='stButton'] > button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background-color: #ff4c4c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#hero div[data-testid*='stButton'] > button:hover {
+    background-color: #e04343;
+    transform: translateY(-2px);
 }
 </style>
-<div id="starfield"></div>
 """
-st.markdown(starfield_css, unsafe_allow_html=True)
+st.markdown(bg_css, unsafe_allow_html=True)
 
 # Custom CSS for hover effect
 hover_css = """
