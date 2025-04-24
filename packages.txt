@@ -1,2 +1,5 @@
 cmake
-build-essential 
+build-essential
+pkg-config
+libssl-dev
+zlib1g-dev 
