@@ -7,125 +7,16 @@ from processing.display import Main
 # Setting the wide mode as default
 st.set_page_config(layout="wide")
 
-# Add space-themed animated background
-space_bg = """
-<style>
-body {
-    background-color: #0a0a15;
-    background-image: radial-gradient(circle, rgba(20, 20, 40, 0.8) 0%, rgba(10, 10, 21, 1) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
-        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
-        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
-    background-size: 550px 550px, 350px 350px, 250px 250px;
-    background-position: 0 0, 15px 15px, 30px 30px;
-    animation: twinkle 10s ease-in-out infinite alternate;
-    z-index: -1;
-}
-
-@keyframes twinkle {
-    0% {
-        background-position: 0 0, 15px 15px, 30px 30px;
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        background-position: 50px 50px, 65px 65px, 80px 80px;
-        opacity: 0.7;
-    }
-}
-
-.stApp {
-    background: transparent;
-}
-</style>
-"""
-st.markdown(space_bg, unsafe_allow_html=True)
-
 # Custom CSS for hover effect
 hover_css = """
 <style>
-div[data-testid*='stButton'] > button {
-    background-color: rgba(20, 20, 40, 0.6);
-    color: white;
-    border: 1px solid #8a2be2;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
 div[data-testid*='stButton'] > button:hover {
-    background-color: #8a2be2;
+    background-color: #f63366; /* Primary color from theme */
     color: white;
-    border-color: #8a2be2;
-    box-shadow: 0 0 15px #8a2be2, 0 0 30px rgba(138, 43, 226, 0.4);
-    transform: translateY(-2px);
+    border-color: #f63366;
 }
-
-div[data-testid*='stButton'] > button:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: shine 1.5s infinite;
-    z-index: -1;
-}
-
-@keyframes shine {
-    0% {
-        left: -100%;
-    }
-    20% {
-        left: 100%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-/* Enhance selectbox style to match space theme */
-div[data-baseweb="select"] {
-    border-radius: 4px;
-    border: 1px solid #8a2be2;
-    background-color: rgba(20, 20, 40, 0.6);
-    transition: all 0.3s ease;
-}
-
-div[data-baseweb="select"]:hover {
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
-    border-color: #8a2be2;
-}
-
-/* Style for slider */
-div.stSlider > div {
-    color: white;
-}
-
-div.stSlider > div > div > div {
-    background-color: #8a2be2;
-}
-
-div.stSlider > div > div > div > div {
-    color: white;
+div[data-testid*='stButton'] > button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 </style>
 """
@@ -430,3 +321,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

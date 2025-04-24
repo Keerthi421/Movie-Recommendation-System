@@ -28,7 +28,7 @@ For a live demonstration of our Movie Recommender System, watch the following vi
 ## Try the App
 
 Explore the Movie Recommender System yourself! Our app is deployed on Streamlit. Click the link below to get started:
-[**Movie Recommender System App**](https://movie-recommender-syst.streamlit.app/)
+[**Movie Recommender System App**]
 
 ## Installation Guide
 
